@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+<nav class="navbar-expand-lg navbar navbar-dark bg-primary">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+   </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+    <div class="navbar-nav">
+
+      <a class="nav-item nav-link active" href="<%= root_path %>">Главная</a>
+
+      <% if signed_in? %>
+
+        <a class="nav-item nav-link active" href="<%= session_logout_path %>">Выход</a>
+
+      <% else %>
+
+        <a class="nav-item nav-link active" href="<%= new_user_path %>">Регистрация</a>
+        <a class="nav-item nav-link active" href="<%= session_login_path %>">Вход</a>
+
+      <% end %>
+
+    </div>
+
+  </div>
+
+</nav>
